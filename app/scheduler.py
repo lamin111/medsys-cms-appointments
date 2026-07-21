@@ -1,7 +1,8 @@
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import datetime
 
 CLINIC_OPEN, CLINIC_CLOSE, SLOT_MINUTES = 9, 17, 30
+
 
 @dataclass
 class Appointment:
@@ -9,8 +10,10 @@ class Appointment:
     doctor_id: str
     start: datetime
 
+
 class ScheduleConflictError(Exception):
     pass
+
 
 class Scheduler:
     def __init__(self):
